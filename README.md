@@ -8,11 +8,11 @@ lock-free single-producer single-consumer ring buffer which maintains several di
 
 Producer:
 ```c
-    uint8_t* p = try_write_io_buffer(&io_buffer, 30);
+    uint8_t* p = try_write_io_buffer(io_buffer, 30);
     if(p)
     {
         memset(p, 'a', 30);
-        write_io_buffer(&io_buffer);
+        write_io_buffer(io_buffer);
     }
 ```
 
